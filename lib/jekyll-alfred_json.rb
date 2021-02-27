@@ -6,7 +6,7 @@ class JekyllAlfredJson < Jekyll::Generator
       .map do |post|
         {
           title: post.data['title'],
-          url: URI.join(site.config['url'], post.url),
+          arg: URI.join(site.config['url'], post.url),
           variables: {
             filename: post.path,
             liquid_link: "{% post_url #{post.basename_without_ext} %}"
