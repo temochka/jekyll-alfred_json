@@ -3,6 +3,7 @@ class JekyllAlfredJson < Jekyll::Generator
 
   def generate(site)
     items = site.posts.docs
+      .sort_by { |post| -post.date.to_i }
       .map do |post|
         {
           title: post.data['title'],
